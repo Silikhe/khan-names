@@ -66,8 +66,14 @@ const dayOfTheWeek = (fullDate) => {
   let thirdPart = (26 * (MM + 1)) / 10;
 
   let d = (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) % 7;
-
+d = Math.trunc(d);
+d = d + 2;
   console.log(d);
+
+  for (const [key, value] of Object.entries(akanMale)) {
+    console.log(value)
+  }
+  
 };
 
 let date = new Date();
