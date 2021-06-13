@@ -3,6 +3,10 @@
 // Calculate the day of the week they were born
 // Depending on the gender give them a name
 // const dDate = document.getElementById("dateInput");
+
+const male = document.getElementById("maleRadio");
+
+
 let CC;
 let DD;
 let YY;
@@ -68,16 +72,17 @@ document.getElementById("dateInput").addEventListener("change", function () {
   console.log("Day of week " + day);
 
 
+  alert(male.isChecked)
   dayOfTheWeek();
 });
 
-// Formulae for calculating day of the month
-// (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) % 7
 
-const dayOfTheWeek = (fullDate) => {
-  let firstPart = CC / 4 - 2 * CC - 1;
-  let secondPart = (5 * YY) / 4;
-  let thirdPart = (26 * (MM + 1)) / 10;
+// Formulae for calculating day of the month
+
+const dayOfTheWeek = () => {
+  // let firstPart = CC / 4 - 2 * CC - 1;
+  // let secondPart = (5 * YY) / 4;
+  // let thirdPart = (26 * (MM + 1)) / 10;
 
   let d = (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) % 7;
   d = Math.round(d);
@@ -87,6 +92,7 @@ const dayOfTheWeek = (fullDate) => {
   let gender = prompt("Whats your Gender?");
 
   //   gender = gender.toLowerCase();
+
 
   if (gender === "male") {
     akanFemale.find((item, index, arr) => {
@@ -106,5 +112,9 @@ const dayOfTheWeek = (fullDate) => {
   }
 };
 
+
+const onSubmit = () => {
+
+}
 let date = new Date();
 // alert(date.getTimezoneOffset)
