@@ -18,7 +18,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Custom Css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <title>Akan-names</title>
 </head>
@@ -26,25 +26,43 @@
 <body>
     <nav class="navbar navbar-light pr-5 pl-5">
         <a class="navbar-brand" href="#">
-            <img src="./assets/logo.svg" alt="">
+            <img src="../assets/logo.svg" alt="">
         </a>
         <a class="navbar-brand" href="#">
             <p class="logo"><span>Aka</span>names</p>
         </a>
     </nav>
-    <section class="background">
-        <div class="p-5 content">
-            <p class="title mb-5">
-                Discover all about African Culture.
-            </p>
-            <p class="mb-5">African culture is expressed in its arts and crafts, Naming is one of the great aspect in
-                African
-                culture. In Ghana a name is given based on day of the week you’re born. Know whats your Akan name.
-            </p>
-            <a href="./pages/form.html" class="btn button p-3 w-50"> Discover your name <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </a>
-        </div>
+    <section class="form container mx-auto">
+
+        <form class="myform mx-auto">
+            <div class="form-group mb-4">
+                <label for="date" class="mylabel mb-4">Enter Date of birth</label>
+                <input class="form-control input p-4" type="date" id="date">
+            </div>
+            <div class="">
+                <label for="date" class="mylabel mb-4">Gender</label>
+
+                <div class="form-group mb-5">
+                    <div class="form-check form-check-inline w-25">
+                        <label class="form-check-label radio">
+                            <input class="form-check-input radio" type="radio" name="inlineRadioOptions"
+                                id="inlineRadio1" value="option1"> Male
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline w-15">
+                        <label class="form-check-label radio">
+                            <input class="form-check-input radio" type="radio" name="inlineRadioOptions"
+                                id="inlineRadio2" value="option2"> Female
+                        </label>
+                    </div>
+                </div>
+                <a href="" class="btn button p-3"> Reveal Your Akhan Name</a>
+            </div>
+
+
+        </form>
     </section>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

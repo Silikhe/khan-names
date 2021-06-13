@@ -7,26 +7,37 @@ let CC;
 let DD;
 let YY;
 let MM;
+let day;
 
-let akanMale = [
-  { Sunday: "Kwasi" },
-  { Monday: "Kwadwo" },
-  { Tuesday: "Kwabena" },
-  { Wednesday: "Kwaku" },
-  { Thursday: "Yaw" },
-  { Friday: "Kofi" },
-  { Saturday: "Kwame" },
-];
+let akanMale = {
+  Sunday: "Kwasi",
+  Monday: "Kwadwo",
+  Tuesday: "Kwabena",
+  Wednesday: "Kwaku",
+  Thursday: "Yaw",
+  Friday: "Kofi",
+  Saturday: "Kwame",
+};
 
 let akanFemale = [
-  { Sunday: "Akosua" },
-  { Monday: "Adwoa" },
-  { Tuesday: "Abenaa" },
-  { Wednesday: "Akua" },
-  { Thursday: "Yaa" },
-  { Friday: "Afua" },
-  { Saturday: "Ama" },
+  { english: "Sunday", ghana: "Akosua" },
+  { english: "Monday", ghana: "Adwoa" },
+  { english: "Tuesday", ghana: "Abenaa" },
+  { english: "Wednesday", ghana: "Akua" },
+  { english: "Thursday", ghana: "Yaa" },
+  { english: "Friday", ghana: "Afua" },
+  { english: "Saturday", ghana: "Ama" },
 ];
+
+const daysOfTheWee = {
+  1: "Sunday",
+  2: "Monday",
+  3: "Tuesday",
+  4: "Wednesday",
+  5: "Thursday",
+  6: "Friday",
+  7: "Saturday",
+};
 
 document.getElementById("dateInput").addEventListener("change", function () {
   var input = this.value;
@@ -37,21 +48,25 @@ document.getElementById("dateInput").addEventListener("change", function () {
   // CC - is the century digits. For example 1989 has CC = 19
   CC = dateEntered.getFullYear();
   CC = CC.toString().substr(0, 2);
-  console.log(CC);
+  console.log("Decade " + CC);
 
   // YY - is the Year digits (1989 has YY = 89)
   YY = dateEntered.getFullYear();
   YY = YY.toString().substr(2, 4);
-  console.log(YY);
+  console.log("Year " + YY);
 
   // MM -  is the Month
   MM = dateEntered.getMonth();
-  console.log(MM);
+  console.log("Month " + MM);
 
   // DD - is the Day of the month
 
-  DD = dateEntered.getDay();
-  console.log(DD);
+  DD = dateEntered.getDate();
+  console.log("Day of month " + DD);
+
+  day = dateEntered.getDay();
+  console.log("Day of week " + day);
+
 
   dayOfTheWeek();
 });
@@ -60,20 +75,35 @@ document.getElementById("dateInput").addEventListener("change", function () {
 // (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) % 7
 
 const dayOfTheWeek = (fullDate) => {
-
   let firstPart = CC / 4 - 2 * CC - 1;
   let secondPart = (5 * YY) / 4;
   let thirdPart = (26 * (MM + 1)) / 10;
 
   let d = (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) % 7;
-d = Math.trunc(d);
-d = d + 2;
-  console.log(d);
+  d = Math.round(d);
+  // d = d + 2;
+  console.log("day of the formulae " + d);
 
-  for (const [key, value] of Object.entries(akanMale)) {
-    console.log(value)
+  let gender = prompt("Whats your Gender?");
+
+  //   gender = gender.toLowerCase();
+
+  if (gender === "male") {
+    akanFemale.find((item, index, arr) => {
+      if(index == day){
+        console.log(item.ghana, item.english)
+      }
+    });
+
+  } else {
+    for (const [key, value] of Object.entries(akanMale)) {
+      if (key == day) {
+        console.log(value, key);
+        // console.log(key);
+
+      }
+    }
   }
-  
 };
 
 let date = new Date();
