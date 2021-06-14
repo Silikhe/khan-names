@@ -1,9 +1,3 @@
-// alert("Hello Khan names")
-// User birthday say 03/07/1778
-// Calculate the day of the week they were born
-// Depending on the gender give them a name
-// const dDate = document.getElementById("dateInput");
-
 const male = document.getElementById("maleRadio");
 const female = document.getElementById("femaleRadio");
 let title = document.getElementById("title");
@@ -16,15 +10,6 @@ let YY;
 let MM;
 let day;
 
-// let akanMale = {
-//   Sunday: "Kwasi",
-//   Monday: "Kwadwo",
-//   Tuesday: "Kwabena",
-//   Wednesday: "Kwaku",
-//   Thursday: "Yaw",
-//   Friday: "Kofi",
-//   Saturday: "Kwame",
-// };
 
 let akanFemale = [
   { english: "Sunday", ghana: "Akosua" },
@@ -46,15 +31,6 @@ let akanMale = [
   { english: "Saturday", ghana: "Kwame" },
 ];
 
-// const daysOfTheWee = {
-//   1: "Sunday",
-//   2: "Monday",
-//   3: "Tuesday",
-//   4: "Wednesday",
-//   5: "Thursday",
-//   6: "Friday",
-//   7: "Saturday",
-// };
 
 const getDate = () => {
   document.getElementById("dateInput").addEventListener("change", function () {
@@ -88,9 +64,6 @@ const getDate = () => {
     day = dateEntered.getDay();
     console.log("Day of week " + day);
 
-    // alert("Helllow")
-
-    // alert(male.isChecked)    // dayOfTheWeek();
   });
 };
 
@@ -106,9 +79,6 @@ const dayOfTheWeek = () => {
   // d = d + 2;
   console.log("day of the formulae " + d);
 
-  // let gender = prompt("Whats your Gender?");
-
-  // console.log("CheckBox "+ checked)
 
   if (male.checked) {
     akanMale.find((item, index, arr) => {
@@ -136,20 +106,18 @@ const dayOfTheWeek = () => {
 const validate = () => {
   if ((((male.checked)  == false) && ((female.checked) == false)) ) {
     document.getElementById("messageOne").innerHTML =
-      "Sellect your gender and check you date formart";
+      "Select your gender and check you date formart";
   }
   else {
     document.querySelector(".form").style.display = "none";
     document.querySelector(".display").style.display = "block";
     dayOfTheWeek();
-    // document.getElementById("message").innerHTML =
-    //   "This is a valid date format.";
   }
 
   let isValidDate = Date.parse("03/17/2021");
 
   if (isNaN(isValidDate)) {
-    document.getElementById("message").innerHTML =
+    document.getElementById("messageOne").innerHTML =
       "This is not a valid date format.";
       console.log("This is not a valid date format.")
   } 
