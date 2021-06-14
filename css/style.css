@@ -204,8 +204,41 @@ line-height: 29px;
 
 
 
+/* Congrats animations */
 
 
+@keyframes confetti-slow {
+  0% {
+      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+ }
+  100% {
+      transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
+ }
+}
+@keyframes confetti-medium {
+  0% {
+      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+ }
+  100% {
+      transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg);
+ }
+}
+@keyframes confetti-fast {
+  0% {
+      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+ }
+  100% {
+      transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
+ }
+}
+.container1 {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  border: 1px solid white;
+  display: fixed;
+  top: 0px;
+}
 .confetti-container {
   perspective: 700px;
   position: absolute;
@@ -215,8 +248,6 @@ line-height: 29px;
   bottom: 0;
   left: 0;
 }
-
-
 .confetti {
   position: absolute;
   z-index: 1;
@@ -232,4 +263,3 @@ line-height: 29px;
 .confetti--animation-fast {
   animation: confetti-fast 1.25s linear 1 forwards;
 }
-
