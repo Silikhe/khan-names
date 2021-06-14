@@ -41,5 +41,5 @@ silikhesilas@gmail.com on slack Silikhe
 
 ### License
 
-Read our [licences](./License)
+Read our [licences](liicense)
 Copyright (c) 2021 **Silas Silikhe**
