@@ -168,7 +168,7 @@ document.getElementById("btn").addEventListener("click", () => {
   // document.querySelector(".display").style.display = "block";
 });
 
-congrats()
+// congrats()
 const congrats = () => {
   // alert("congrats")
   const Confettiful = function (el) {
