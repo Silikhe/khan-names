@@ -109,6 +109,7 @@ const dayOfTheWeek = () => {
     akanMale.find((item, index, arr) => {
       if (index == day) {
         console.log(item.ghana, item.english);
+        document.getElementById("title").innerHTML = item.ghana
         document.getElementById("text").innerHTML = `Means an African male 👨🏿 born on ${item.english}`
 
       }
@@ -117,6 +118,7 @@ const dayOfTheWeek = () => {
     akanMale.find((item, index, arr) => {
       if (index == day) {
         console.log(item.ghana, item.english);
+        document.getElementById("title").innerHTML = item.ghana
         document.getElementById("text").innerHTML =`Means an African female 👧🏿 born on ${item.english}`
       }
     });
