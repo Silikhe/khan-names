@@ -201,7 +201,13 @@ line-height: 29px;
   font-weight: normal;
 }
 
+#messageOne{
+  font-size: 15px;
+}
 
+.p-cont strong{
+ color: rgb(7, 7, 7);
+}
 
 
 /* Congrats animations */
