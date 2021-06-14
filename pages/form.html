@@ -25,10 +25,10 @@
 
 <body>
     <nav class="navbar navbar-light pr-5 pl-5">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../index.html">
             <img src="../assets/logo.svg" alt="">
         </a>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../index.html">
             <p class="logo"><span>Aka</span>names</p>
         </a>
     </nav>
@@ -39,15 +39,16 @@
                     <div class="form-group mb-5">
                         <label for="date" class="mylabel mb-4">Enter Date of birth</label>
                         <input class="form-control input p-4" type="date" id="dateInput">
+                        <div id="message" class=" text-danger"></div>
                     </div>
                     <div class="">
                         <label for="date" class="mylabel mb-4">Gender</label>
-        
+
                         <div class="form-group mb-5">
                             <div class="form-check form-check-inline w-25">
                                 <label class="form-check-label radio">
-                                    <input class="form-check-input radio" type="radio" name="inlineRadioOptions" id="maleRadio"
-                                        value="option1"> Male
+                                    <input class="form-check-input radio" type="radio" name="inlineRadioOptions"
+                                        id="maleRadio" value="option1"> Male
                                 </label>
                             </div>
                             <div class="form-check form-check-inline w-15">
@@ -57,6 +58,8 @@
                                 </label>
                             </div>
                         </div>
+                        <div id="messageOne" class=" text-danger"></div>
+
                         <a id="btn" class="btn text-center button p-3"> Reveal Your Akhan Name</a>
                     </div>
                 </form>
@@ -65,12 +68,15 @@
                 <img src="/assets/africa.png" alt="">
             </div>
         </div>
+        <h1 class="text-center mb-5">This is Africa!</h1>
+        <p class="text-center">African calture is amazing and should be embraced</p>
     </section>
-    <section>
+    <section class="display">
+        <div class="js-container container" style="top:0px !important;"></div>
         <div class="container text-center">
-<p>Congrats Your Akan Name is</p>
-<h1 id="title"></h1>
-<p id="text"></p>
+            <p class="title-normal mb-5">Congrats Your Akan Name is</p>
+            <h1 id="title" class="mb-5"></h1>
+            <p id="text"></p>
         </div>
     </section>
 
