@@ -2,6 +2,7 @@ const male = document.getElementById("maleRadio");
 const female = document.getElementById("femaleRadio");
 let title = document.getElementById("title");
 let text = document.getElementById("text");
+let theDate = document.getElementById("dateInput")
 
 
 let CC;
@@ -104,7 +105,7 @@ const dayOfTheWeek = () => {
 };
 
 const validate = () => {
-  if ((((male.checked)  == false) && ((female.checked) == false)) ) {
+  if (((((male.checked)  == false) && ((female.checked) == false))) || ((theDate.value) == null) ) {
     document.getElementById("messageOne").innerHTML =
       "Select your gender and check you date formart";
   }
