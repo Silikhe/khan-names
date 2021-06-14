@@ -2,14 +2,14 @@ const male = document.getElementById("maleRadio");
 const female = document.getElementById("femaleRadio");
 let title = document.getElementById("title");
 let text = document.getElementById("text");
-let theDate = document.getElementById("dateInput")
-
+let tDate = document.getElementById("dateInput")
 
 let CC;
 let DD;
 let YY;
 let MM;
 let day;
+let d;
 
 
 let akanFemale = [
@@ -71,11 +71,8 @@ const getDate = () => {
 // Formulae for calculating day of the month
 
 const dayOfTheWeek = () => {
-  // let firstPart = CC / 4 - 2 * CC - 1;
-  // let secondPart = (5 * YY) / 4;
-  // let thirdPart = (26 * (MM + 1)) / 10;
 
-  let d = (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) % 7;
+  d = (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) % 7;
   d = Math.floor(d);
   // d = d + 2;
   console.log("day of the formulae " + d);
@@ -105,7 +102,7 @@ const dayOfTheWeek = () => {
 };
 
 const validate = () => {
-  if (((((male.checked)  == false) && ((female.checked) == false))) || ((theDate.value) == null) ) {
+  if (((((male.checked)  == false) && ((female.checked) == false))) || (CC == null) ) {
     document.getElementById("messageOne").innerHTML =
       "Select your gender and check you date formart";
   }
@@ -124,19 +121,15 @@ const validate = () => {
   } 
 };
 
-let date = new Date();
-// alert(date.getTimezoneOffset)
+// let date = new Date();
 getDate();
 
 document.getElementById("btn").addEventListener("click", () => {
-  // dayOfTheWeek();
-  // Confettiful()
   validate();
-  // document.querySelector(".form").style.display = "none";
-  // document.querySelector(".display").style.display = "block";
+
 });
 
-// congrats()
+// congrats() decorations
 const Confettiful = function(el) {
   this.el = el;
   this.containerEl = null;
