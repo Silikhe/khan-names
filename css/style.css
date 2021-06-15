@@ -29,7 +29,6 @@ section {
 .background {
   background-image: url(../assets/bg-image.svg);
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
   height: 90vh;
   width: 100%;
