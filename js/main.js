@@ -102,11 +102,17 @@ const dayOfTheWeek = () => {
 };
 
 const validate = () => {
-  if (((((male.checked)  == false) && ((female.checked) == false))) || (CC == null) ) {
+  if (((male.checked)  == false) && ((female.checked) == false)) {
     document.getElementById("messageOne").innerHTML =
-      "Select your gender and check you date formart";
+      "Select your gender";
   }
-  else {
+  else if ( CC == null ) {
+    document.getElementById("messageOne").innerHTML =
+      "Fill in your date";
+  }else if ( ((((male.checked)  == false) && ((female.checked) == false))) || (CC == null) ) {
+    document.getElementById("messageOne").innerHTML =
+      "Fill your date and Gender";
+  }else{
     document.querySelector(".form").style.display = "none";
     document.querySelector(".display").style.display = "block";
     dayOfTheWeek();
